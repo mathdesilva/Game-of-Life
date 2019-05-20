@@ -1,12 +1,9 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 #include "../include/lodepng.h"
 #include "../include/canvas.h"
-
-#include <fstream>
-
-using namespace life;
 
 /// Saves an image as a **ascii** PPM file.
 bool save_ppm3( const unsigned char * data, size_t w, size_t h, size_t d,  const std::string & file_name_ )
@@ -37,9 +34,7 @@ bool save_ppm3( const unsigned char * data, size_t w, size_t h, size_t d,  const
     return result;
 }
 
-// Example 1
-// Encode from raw pixels to disk with a single function call
-// The image argument has width * height RGBA pixels or width * height * 4 bytes
+/// Encode from raw pixels to disk with a single function call
 void encode_png(const char* filename, const unsigned char * image, unsigned width, unsigned height)
 {
     //Encode the image
@@ -49,7 +44,7 @@ void encode_png(const char* filename, const unsigned char * image, unsigned widt
     if(error) std::cout << "encoder error " << error << ": "<< lodepng_error_text(error) << std::endl;
 }
 
-// Saves image to filename given as argument. Warning, this overwrites the file without warning!
+/// Main
 int main(int argc, char *argv[])
 {
     //NOTE: this sample will overwrite the file or test.png without warning!
@@ -59,20 +54,20 @@ int main(int argc, char *argv[])
     unsigned width = 20, height = 15;
     short block_size = 40;
 
-    Canvas image( width, height, block_size );
+    life::Canvas image( width, height, block_size );
     for ( auto x{0u} ; x < width ; x++ )
         for ( auto y{0u} ; y < height ; y++ )
         {
             if ( y % 2 )
                 if ( ! (x % 2) )
-                    image.pixel( Point2(x,y) , DEEP_SKY_BLUE );
+                    image.pixel( life::Point2(x,y) , life::DEEP_SKY_BLUE );
                 else
-                    image.pixel( Point2(x,y) , RED );
+                    image.pixel( life::Point2(x,y) , life::RED );
             else
                 if ( ! (x % 2) )
-                    image.pixel( Point2(x,y) , RED );
+                    image.pixel( life::Point2(x,y) , life::RED );
                 else
-                    image.pixel( Point2(x,y) , DEEP_SKY_BLUE );
+                    image.pixel( life::Point2(x,y) , life::DEEP_SKY_BLUE );
         }
 
     encode_png(filename, image.pixels(), image.width(), image.height() );
