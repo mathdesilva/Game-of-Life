@@ -72,26 +72,22 @@ namespace life {
             void clear( void );
             /// Set the color of a pixel on the canvas.
             void pixel( const Point2& point,  const Color& color){
-
-                std::cout << "Point2: " << point.x << " " << point.y << std::endl;
-                // std::cout << "Color: " << color.channels[0] << " " << color.channels[1] << " " << color.channels[2] << std::endl;
                 long start = (point.y * m_block_size * m_width * image_depth) + (point.x * image_depth * m_block_size);
-                long oneLineSize = m_block_size * image_depth * m_width;
-                std::cout << "Start: "<< start << std::endl;
 
-                int contador = 0;
-                for(long i = start; i < (start + (m_block_size * oneLineSize)); i += oneLineSize){
-                    contador++;
-                    std::cout << contador << std::endl;
-                    for(long j = i; j < (i + m_block_size * image_depth); j += image_depth)
+                long counter = 0;
+                while( counter < m_block_size )
+                {
+                    counter++;
+                    for( long i = start ; i < start + (m_block_size * image_depth) ; i += image_depth)
                     {
-                        m_pixels[j] = color.channels[0];
-                        m_pixels[j+1] = color.channels[1];
-                        m_pixels[j+2] = color.channels[2];
-                        m_pixels[j+3] = alfa_value;
+                        m_pixels[i] = color.channels[0];
+                        m_pixels[i+1] = color.channels[1];
+                        m_pixels[i+2] = color.channels[2];
+                        m_pixels[i+3] = alfa_value;
                     }
-                }
 
+                    start += m_width * image_depth;
+                }
             }
             /// Get the pixel color from the canvas.
             Color pixel( const Point2& ) const;
