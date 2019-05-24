@@ -21,6 +21,21 @@ Game_manager::~Game_manager( )
 	delete life;
 } // ~Game_manager
 
+void Game_manager::start( )
+{
+	std::cout << "starting\n";
+
+	std::cout << rule.b[0] << rule.b[1] << rule.b[2] << std::endl;
+	std::cout << rule.s[0] << rule.s[1] << rule.s[2] << std::endl; 
+
+	while( true )
+	{
+		break;
+	}
+
+	life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
+} // start
+
 bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 {
 	for( int i{1} ; i < argc ; i++ )
@@ -368,7 +383,34 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 				return false;
 			}
 
-			this->rule = value;
+			bool beforeBar = true;
+			int bc = 0;
+			int sc = 0;
+			for( int i = 1; i < (int)value.size(); i++ )
+			{
+				if(beforeBar)
+				{
+					if(value[i] == '/'){
+						beforeBar = false;
+						i++;
+						continue;
+					}
+					else{
+						this->rule.b[bc] = value[i] - 48;
+						bc++;
+					}
+				}
+				else
+				{
+					this->rule.s[sc] = value[i] - 48;
+					sc++;
+				}
+			}
+
+			for(int i=bc; i<9; i++)
+				rule.b[i] = -1;
+			for(int i=sc; i<9; i++)
+				rule.s[i] = -1;
 		} // else if --rule
 
 		// default argument
@@ -395,10 +437,3 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 
 	return true;
 } // input_validation_cmd
-
-void Game_manager::start( )
-{
-	std::cout << "starting\n";
-	life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
-} // start
-

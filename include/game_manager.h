@@ -9,6 +9,12 @@
 #include "life.h"
 #include "input_validation.h"
 
+struct Rule
+{
+	int b[9]{ 3, -1, -1, -1, -1, -1, -1, -1, -1 };
+	int s[9]{ 2, 3, -1, -1, -1, -1, -1, -1, -1 };
+};
+
 class Game_manager
 {
 private:
@@ -16,10 +22,10 @@ private:
 	int maxgen=-1; //!< Max generetion value.
 	int fps=2; //!< FPS of output.
 	int blocksize=10; //!< size of "big pixel" block.
-	life::Color bkgcolor = Color{0,250,0}; //!< green
-	life::Color alivecolor = Color{70,130,180}; //!< blue
+	life::Color bkgcolor = Color{0,250,0}; //!< green.
+	life::Color alivecolor = Color{70,130,180}; //!< blue.
 	std::string outfile="null"; //!< output file name.
-	std::string rule="null"; //!< rule code.
+	Rule rule; //!< rule code.
 	std::string inpu_cfg_file="null"; //!< input file name.
 	Life * life = nullptr; //!< file pointer.
 
