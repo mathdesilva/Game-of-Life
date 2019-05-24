@@ -7,6 +7,9 @@
 
 #include "input_validation.h"
 #include "prints.h"
+#include "lodepng.h"
+#include "canvas.h"
+#include "common.h"
 
 class Life
 {
@@ -25,6 +28,9 @@ public:
 
 	/// operator<< overload to print all matrix
 	friend std::ostream& operator<<(std::ostream& os, const Life& lf);
+
+	// generate cell image png
+	void print_image( std::string imgdir, const life::Color& bkgcolor, const life::Color& alivecolor, int blocksize );
 
 	/// get number of lines
 	size_t lines( )

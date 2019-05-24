@@ -1,5 +1,5 @@
-#ifndef GAME_MANAGER
-#define GAME_MANAGER
+#ifndef GAME_MANAGER_H
+#define GAME_MANAGER_H
 
 #include <iostream>
 #include <string>
@@ -14,14 +14,14 @@ class Game_manager
 private:
 	std::string imgdir="null"; //!< Image directory.
 	int maxgen=-1; //!< Max generetion value.
-	int fps=-1; //!< FPS of output.
-	int blocksize=-1; //!< size of "big pixel" block.
-	std::string bkgcolor="null"; //!< Background color.
-	std::string alivecolor="null"; //!< Alive cells color.
+	int fps=2; //!< FPS of output.
+	int blocksize=10; //!< size of "big pixel" block.
+	life::Color bkgcolor = Color{0,250,0}; //!< green
+	life::Color alivecolor = Color{70,130,180}; //!< blue
 	std::string outfile="null"; //!< output file name.
 	std::string rule="null"; //!< rule code.
 	std::string inpu_cfg_file="null"; //!< input file name.
-	Life * life; //!< file pointer.
+	Life * life = nullptr; //!< file pointer.
 
 public:
 	/// Constructor
@@ -29,6 +29,9 @@ public:
 
 	/// Destructor
 	~Game_manager( );
+
+	/// Start the game
+	void start( );
 
 private:
 	/// Validate and save command line inputs

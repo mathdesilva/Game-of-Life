@@ -83,3 +83,25 @@ std::ostream& operator<<(std::ostream& os, const Life& lf)
 
 	return os;
 } // operator<<
+
+void Life::print_image( std::string imgdir, const life::Color& bkgcolor, const life::Color& alivecolor, int blocksize )
+{	
+	const char* filename = "test.png";
+	Canvas image( this->nCol, this->nLin, blocksize );
+
+	for(int y=0; y<(int)this->nLin; y++)
+	{
+		for(int x=0; x<(int)this->nCol; x++)
+		{
+			if(this->mtx[y][x] == false)
+				image.pixel( life::Point2(x,y) , bkgcolor );
+			else
+				image.pixel( life::Point2(x,y) , alivecolor );
+		}
+	}
+
+	//Encode the image
+	unsigned error = lodepng::encode(filename, image.pixels(), image.width(), image.height());
+    //if there's an error, display it
+    if(error) std::cout << "encoder error " << error << ": "<< lodepng_error_text(error) << std::endl;
+} // print_image

@@ -98,7 +98,90 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 				return false;
 			}
 
-			this->bkgcolor = value;
+			if( value == "BLACK" )
+			{
+				this->bkgcolor.channels[0] = life::BLACK.channels[0];
+				this->bkgcolor.channels[1] = life::BLACK.channels[1];
+				this->bkgcolor.channels[2] = life::BLACK.channels[2];
+			}
+			if( value == "BLUE" )
+			{
+				this->bkgcolor.channels[0] = life::BLUE.channels[0];
+				this->bkgcolor.channels[1] = life::BLUE.channels[1];
+				this->bkgcolor.channels[2] = life::BLUE.channels[2];
+			}
+			if( value == "CRIMSON" )
+			{
+				this->bkgcolor.channels[0] = life::CRIMSON.channels[0];
+				this->bkgcolor.channels[1] = life::CRIMSON.channels[1];
+				this->bkgcolor.channels[2] = life::CRIMSON.channels[2];
+			}
+			if( value == "DARK_GREEN" )
+			{
+				this->bkgcolor.channels[0] = life::DARK_GREEN.channels[0];
+				this->bkgcolor.channels[1] = life::DARK_GREEN.channels[1];
+				this->bkgcolor.channels[2] = life::DARK_GREEN.channels[2];
+			}
+			if( value == "DEEP_SKY_BLUE" )
+			{
+				this->bkgcolor.channels[0] = life::DEEP_SKY_BLUE.channels[0];
+				this->bkgcolor.channels[1] = life::DEEP_SKY_BLUE.channels[1];
+				this->bkgcolor.channels[2] = life::DEEP_SKY_BLUE.channels[2];
+			}
+			if( value == "DODGER_BLUE" )
+			{
+				this->bkgcolor.channels[0] = life::DODGER_BLUE.channels[0];
+				this->bkgcolor.channels[1] = life::DODGER_BLUE.channels[1];
+				this->bkgcolor.channels[2] = life::DODGER_BLUE.channels[2];
+			}
+			if( value == "GREEN" )
+			{
+				this->bkgcolor.channels[0] = life::GREEN.channels[0];
+				this->bkgcolor.channels[1] = life::GREEN.channels[1];
+				this->bkgcolor.channels[2] = life::GREEN.channels[2];
+			}
+			if( value == "LIGHT_BLUE" )
+			{
+				this->bkgcolor.channels[0] = life::LIGHT_BLUE.channels[0];
+				this->bkgcolor.channels[1] = life::LIGHT_BLUE.channels[1];
+				this->bkgcolor.channels[2] = life::LIGHT_BLUE.channels[2];
+			}
+			if( value == "LIGHT_GREY" )
+			{
+				this->bkgcolor.channels[0] = life::LIGHT_GREY.channels[0];
+				this->bkgcolor.channels[1] = life::LIGHT_GREY.channels[1];
+				this->bkgcolor.channels[2] = life::LIGHT_GREY.channels[2];
+			}
+			if( value == "LIGHT_YELLOW" )
+			{
+				this->bkgcolor.channels[0] = life::LIGHT_YELLOW.channels[0];
+				this->bkgcolor.channels[1] = life::LIGHT_YELLOW.channels[1];
+				this->bkgcolor.channels[2] = life::LIGHT_YELLOW.channels[2];
+			}
+			if( value == "RED" )
+			{
+				this->bkgcolor.channels[0] = life::RED.channels[0];
+				this->bkgcolor.channels[1] = life::RED.channels[1];
+				this->bkgcolor.channels[2] = life::RED.channels[2];
+			}
+			if( value == "STEEL_BLUE" )
+			{
+				this->bkgcolor.channels[0] = life::STEEL_BLUE.channels[0];
+				this->bkgcolor.channels[1] = life::STEEL_BLUE.channels[1];
+				this->bkgcolor.channels[2] = life::STEEL_BLUE.channels[2];
+			}
+			if( value == "WHITE" )
+			{
+				this->bkgcolor.channels[0] = life::WHITE.channels[0];
+				this->bkgcolor.channels[1] = life::WHITE.channels[1];
+				this->bkgcolor.channels[2] = life::WHITE.channels[2];
+			}
+			if( value == "YELLOW" )
+			{
+				this->bkgcolor.channels[0] = life::YELLOW.channels[0];
+				this->bkgcolor.channels[1] = life::YELLOW.channels[1];
+				this->bkgcolor.channels[2] = life::YELLOW.channels[2];
+			}
 		}
 
 		// alive color argument
@@ -114,7 +197,90 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 				return false;
 			}
 
-			this->alivecolor = value;
+			if( value == "BLACK" )
+			{
+				this->alivecolor.channels[0] = life::BLACK.channels[0];
+				this->alivecolor.channels[1] = life::BLACK.channels[1];
+				this->alivecolor.channels[2] = life::BLACK.channels[2];
+			}
+			if( value == "BLUE" )
+			{
+				this->alivecolor.channels[0] = life::BLUE.channels[0];
+				this->alivecolor.channels[1] = life::BLUE.channels[1];
+				this->alivecolor.channels[2] = life::BLUE.channels[2];
+			}
+			if( value == "CRIMSON" )
+			{
+				this->alivecolor.channels[0] = life::CRIMSON.channels[0];
+				this->alivecolor.channels[1] = life::CRIMSON.channels[1];
+				this->alivecolor.channels[2] = life::CRIMSON.channels[2];
+			}
+			if( value == "DARK_GREEN" )
+			{
+				this->alivecolor.channels[0] = life::DARK_GREEN.channels[0];
+				this->alivecolor.channels[1] = life::DARK_GREEN.channels[1];
+				this->alivecolor.channels[2] = life::DARK_GREEN.channels[2];
+			}
+			if( value == "DEEP_SKY_BLUE" )
+			{
+				this->alivecolor.channels[0] = life::DEEP_SKY_BLUE.channels[0];
+				this->alivecolor.channels[1] = life::DEEP_SKY_BLUE.channels[1];
+				this->alivecolor.channels[2] = life::DEEP_SKY_BLUE.channels[2];
+			}
+			if( value == "DODGER_BLUE" )
+			{
+				this->alivecolor.channels[0] = life::DODGER_BLUE.channels[0];
+				this->alivecolor.channels[1] = life::DODGER_BLUE.channels[1];
+				this->alivecolor.channels[2] = life::DODGER_BLUE.channels[2];
+			}
+			if( value == "GREEN" )
+			{
+				this->alivecolor.channels[0] = life::GREEN.channels[0];
+				this->alivecolor.channels[1] = life::GREEN.channels[1];
+				this->alivecolor.channels[2] = life::GREEN.channels[2];
+			}
+			if( value == "LIGHT_BLUE" )
+			{
+				this->alivecolor.channels[0] = life::LIGHT_BLUE.channels[0];
+				this->alivecolor.channels[1] = life::LIGHT_BLUE.channels[1];
+				this->alivecolor.channels[2] = life::LIGHT_BLUE.channels[2];
+			}
+			if( value == "LIGHT_GREY" )
+			{
+				this->alivecolor.channels[0] = life::LIGHT_GREY.channels[0];
+				this->alivecolor.channels[1] = life::LIGHT_GREY.channels[1];
+				this->alivecolor.channels[2] = life::LIGHT_GREY.channels[2];
+			}
+			if( value == "LIGHT_YELLOW" )
+			{
+				this->alivecolor.channels[0] = life::LIGHT_YELLOW.channels[0];
+				this->alivecolor.channels[1] = life::LIGHT_YELLOW.channels[1];
+				this->alivecolor.channels[2] = life::LIGHT_YELLOW.channels[2];
+			}
+			if( value == "RED" )
+			{
+				this->alivecolor.channels[0] = life::RED.channels[0];
+				this->alivecolor.channels[1] = life::RED.channels[1];
+				this->alivecolor.channels[2] = life::RED.channels[2];
+			}
+			if( value == "STEEL_BLUE" )
+			{
+				this->alivecolor.channels[0] = life::STEEL_BLUE.channels[0];
+				this->alivecolor.channels[1] = life::STEEL_BLUE.channels[1];
+				this->alivecolor.channels[2] = life::STEEL_BLUE.channels[2];
+			}
+			if( value == "WHITE" )
+			{
+				this->alivecolor.channels[0] = life::WHITE.channels[0];
+				this->alivecolor.channels[1] = life::WHITE.channels[1];
+				this->alivecolor.channels[2] = life::WHITE.channels[2];
+			}
+			if( value == "YELLOW" )
+			{
+				this->alivecolor.channels[0] = life::YELLOW.channels[0];
+				this->alivecolor.channels[1] = life::YELLOW.channels[1];
+				this->alivecolor.channels[2] = life::YELLOW.channels[2];
+			}
 		}
 
 		// outfile directory argument
@@ -229,3 +395,10 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 
 	return true;
 } // input_validation_cmd
+
+void Game_manager::start( )
+{
+	std::cout << "starting\n";
+	life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
+} // start
+
