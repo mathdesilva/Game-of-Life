@@ -9,6 +9,9 @@ Game_manager::Game_manager( int argc, char *argv[] )
 			
 			// Creating a life
 			life = new Life( inpu_cfg_file );
+
+			// test
+			std::cout << *life << std::endl;
 		} 
 		catch (const std::invalid_argument& e) {
 			print_error(e.what());

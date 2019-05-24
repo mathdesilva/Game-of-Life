@@ -50,17 +50,36 @@ void Life::dataFile_validation( std::string file )
 
 	// reading matrix values from input file;
 	std::string line;
+	std::getline(inputFile, line);
 	for( int i = 0 ; i < (int)this->nLin ; i++ )
 	{
 		if(inputFile.eof())
 			throw std::invalid_argument("Invalid values in input file");
 		std::getline(inputFile, line);
 
-		for( int j = 0 ; j < (int)this->nCol or j < (int)line.size(); j++ )
-			if( line[i] == this->aliveChar )
+		for( int j = 0 ; (j < (int)this->nCol and j < (int)line.size()); j++ )
+			if( line[j] == this->aliveChar )
 				this->mtx[i][j] = true;
 	}
 
 	// closing file
 	inputFile.close();
-}
+} // dataFile_validation
+
+std::ostream& operator<<(std::ostream& os, const Life& lf)
+{
+	for(int i=0; i<(int)lf.nLin; i++)
+	{
+		os << '[';
+		for(int j=0; j<(int)lf.nCol; j++)
+		{
+			if(lf.mtx[i][j] == false)
+				os << ' ';
+			else
+				os << lf.aliveChar;
+		}
+		os << ']' << std::endl;
+	}
+
+	return os;
+} // operator<<

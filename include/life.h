@@ -23,7 +23,23 @@ public:
 	/// Destructor
 	~Life( );
 
+	/// operator<< overload to print all matrix
+	friend std::ostream& operator<<(std::ostream& os, const Life& lf);
+
+	/// get number of lines
+	size_t lines( )
+	{ return nLin; }
+
+	/// get number of columns
+	size_t columns( )
+	{ return nCol; }
+
+	/// get char that representates alive cells
+	char charAlive( )
+	{ return aliveChar; }
+
 private:
+	/// checks and save input file values
 	void dataFile_validation( std::string file );
 
 }; // class Life
