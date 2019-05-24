@@ -5,8 +5,10 @@
 #include <string>
 #include <stdexcept>
 
+/// Prints help message
 void print_help( void );
 
-void print_alert( std::string str );
+/// Prints error messages
+void print_error( std::string str );
 
 #endif

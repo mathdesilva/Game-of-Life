@@ -6,36 +6,29 @@
 #include <stdexcept>
 
 #include "prints.h"
+#include "life.h"
 
 class Game_manager
 {
+private:
+	std::string imgdir="null"; //!< Image directory.
+	int maxgen=-1; //!< Max generetion value.
+	int fps=-1; //!< FPS of output.
+	int blocksize=-1; //!< size of "big pixel" block.
+	std::string bkgcolor="null"; //!< Background color.
+	std::string alivecolor="null"; //!< Alive cells color.
+	std::string outfile="null"; //!< output file name.
+	std::string rule="null"; //!< rule code.
+	std::string inpu_cfg_file="null"; //!< input file name.
+	Life * life; //!< file pointer.
+
 public:
-	Game_manager( int argc, char *argv[] )
-	{
-		try {
-			print_alert("Reading arguments");
-			input_validation_cmd( argc, argv );
-			print_alert("Arguments was successfully read");
-		} 
-		catch (const std::invalid_argument& ia) {
-			print_alert("ERROR");
-			print_help();
-		}
-	}
+	/// Constructor
+	Game_manager( int argc, char *argv[] );
 
 private:
+	/// Validate and save command line inputs
 	bool input_validation_cmd( int argc, char *argv[] );
-
-private:
-	std::string imgdir="null";
-	int maxgen=-1;
-	int fps=-1;
-	int blocksize=-1;
-	std::string bkgcolor="null";
-	std::string alivecolor="null";
-	std::string outfile="null";
-	std::string rule="null";
-	std::string inpu_cfg_file="null";
 
 }; // class game_manager
 

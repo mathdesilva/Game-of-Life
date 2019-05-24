@@ -19,7 +19,7 @@ void print_help( void )
 
 }
 
-void print_alert( std::string str )
+void print_error( std::string str )
 {
-	std::cout << ">>> " << str << std::endl;
+	std::cout << "ERROR: " << str << std::endl;
 }

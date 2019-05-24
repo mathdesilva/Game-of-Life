@@ -1,5 +1,21 @@
 #include "game_manager.h"
 
+Game_manager::Game_manager( int argc, char *argv[] )
+{
+		// Reading command line values
+		try {
+			input_validation_cmd( argc, argv );
+		} 
+		catch (const std::invalid_argument& e) {
+			print_error(e.what());
+			print_help();
+		}
+
+		// Creating a life
+		life = new Life( inpu_cfg_file );
+
+} // Game_manager
+
 bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 {
 	for( int i{1} ; i < argc ; i++ )
