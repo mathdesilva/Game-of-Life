@@ -2,17 +2,11 @@
 
 Game_manager::Game_manager( int argc, char *argv[] )
 {
-	try {
-		// Reading command line values
-		input_validation_cmd( argc, argv );
-		
-		// Creating a life
-		life = new Life( inpu_cfg_file );
-	} 
-	catch (const std::invalid_argument& e) {
-		print_error(e.what());
-		print_help();
-	}
+	// Reading command line values
+	input_validation_cmd( argc, argv );
+	
+	// Creating a life
+	life = new Life( inpu_cfg_file );
 
 } // Game_manager
 

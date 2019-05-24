@@ -4,13 +4,7 @@ Life::Life( std::string file )
 {
 	// read input data file
 	// save variables
-	try{
-		dataFile_validation( file );
-	}
-	catch ( const std::invalid_argument& e){
-		print_error(e.what());
-		print_help();
-	}
+	dataFile_validation( file );
 
 	// alocate matrix
 	// put values in matrix
