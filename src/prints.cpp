@@ -2,7 +2,7 @@
 
 void print_help( void )
 {
-	std::cout << "HELP:\n"
+	std::cout << ">>> HELP <<<\n"
 			  << "Usage: glife [<options>] <input_cfg_file>\n\n"
 			  << "Simulation options:\n"
 			  << "  --help               Prints this help text.\n\n"
@@ -15,7 +15,7 @@ void print_help( void )
 			  << "  --outfile <filename> Write the text representation of the simulation to the given filename.\n\n"
 			  << "  --rule <code>        Specify evolution rule using Bx/Sx code, B for born and S for survives.\n\n"
 			  << std::endl << std::endl
-			  << "Available colors are:\n    BLACK BLUE CRIMSON DARK_GREEN DEEP_SKY_BLUE DODGER_BLUE GREEN LIGHT_BLUE LIGHT_GREY LIGHT_YELLOW RED STEEL_BLUE WHITE YELLOW" << std::endl;
+			  << "Available colors are:\n    BLACK BLUE CRIMSON DARK_GREEN DEEP_SKY_BLUE DODGER_BLUE\n    GREEN LIGHT_BLUE LIGHT_GREY LIGHT_YELLOW RED STEEL_BLUE\n    WHITE YELLOW" << std::endl;
 
 }
 

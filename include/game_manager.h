@@ -26,6 +26,9 @@ public:
 	/// Constructor
 	Game_manager( int argc, char *argv[] );
 
+	/// Destructor
+	~Game_manager( );
+
 private:
 	/// Validate and save command line inputs
 	bool input_validation_cmd( int argc, char *argv[] );
