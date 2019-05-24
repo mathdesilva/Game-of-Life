@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <stdexcept>
+
+#include "prints.h"
 
 class Game_manager
 {
@@ -24,7 +27,8 @@ private:
 	int blocksize;
 	std::string bkgcolor;
 	std::string alivecolor;
-	std::string outfile; 
+	std::string outfile;
+	std::string rule;
 
 }; // class game_manager
 
