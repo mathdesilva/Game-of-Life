@@ -7,6 +7,7 @@
 
 #include "prints.h"
 #include "life.h"
+#include "input_validation.h"
 
 class Game_manager
 {

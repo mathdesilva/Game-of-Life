@@ -8,9 +8,6 @@ Game_manager::Game_manager( int argc, char *argv[] )
 		
 		// Creating a life
 		life = new Life( inpu_cfg_file );
-
-		// test
-		std::cout << *life << std::endl;
 	} 
 	catch (const std::invalid_argument& e) {
 		print_error(e.what());
@@ -53,12 +50,11 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 		else if( input == "--maxgen" )
 		{
 			std::string value = argv[++i];
-			for(int i = 0; i < (int)value.size(); i++)
-				if(value[i] < '0' or value[i] > '9')
-				{
-					throw std::invalid_argument("invalid value to --maxgen");
-					return false;
-				}
+			if( not isInt(value) )
+			{
+				throw std::invalid_argument("invalid value to --maxgen");
+				return false;
+			}
 
 			this->maxgen = stoi(value);
 		}
@@ -67,12 +63,11 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 		else if( input == "--fps" )
 		{
 			std::string value = argv[++i];
-			for(int i = 0; i < (int)value.size(); i++)
-				if(value[i] < '0' or value[i] > '9')
-				{
-					throw std::invalid_argument("invalid value to --fps");
-					return false;
-				}
+			if( not isInt(value) )
+			{
+				throw std::invalid_argument("invalid value to --fps");
+				return false;
+			}
 
 			this->fps = stoi(value);
 		}
@@ -81,12 +76,11 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 		else if( input == "--blocksize" )
 		{
 			std::string value = argv[++i];
-			for(int i = 0; i < (int)value.size(); i++)
-				if(value[i] < '0' or value[i] > '9')
-				{
-					throw std::invalid_argument("invalid value to --blocksize");
-					return false;
-				}
+			if( not isInt(value) )
+			{
+				throw std::invalid_argument("invalid value to --blocksize");
+				return false;
+			}
 
 			this->blocksize = stoi(value);
 		}
