@@ -80,7 +80,13 @@ std::ostream& operator<<(std::ostream& os, const Life& lf)
 
 void Life::print_image( std::string imgdir, const life::Color& bkgcolor, const life::Color& alivecolor, int blocksize )
 {	
-	const char* filename = "test.png";
+	std::string numbname = std::to_string(imageCount);
+	if(imgdir[imgdir.size()-1] != '/')
+		imgdir.append("/");
+	imgdir.append(numbname);
+	imgdir.append(".png");
+
+	// const char* filename = (const char*)imgdir;
 	Canvas image( this->nCol, this->nLin, blocksize );
 
 	for(int y=0; y<(int)this->nLin; y++)
@@ -95,7 +101,9 @@ void Life::print_image( std::string imgdir, const life::Color& bkgcolor, const l
 	}
 
 	//Encode the image
-	unsigned error = lodepng::encode(filename, image.pixels(), image.width(), image.height());
+	unsigned error = lodepng::encode(imgdir, image.pixels(), image.width(), image.height());
     //if there's an error, display it
-    if(error) std::cout << "encoder error " << error << ": "<< lodepng_error_text(error) << std::endl;
+    if(error) throw std::invalid_argument("error in png generation");
+
+  	imageCount++;
 } // print_image

@@ -19,15 +19,13 @@ void Game_manager::start( )
 {
 	std::cout << "starting\n";
 
-	std::cout << rule.b[0] << rule.b[1] << rule.b[2] << std::endl;
-	std::cout << rule.s[0] << rule.s[1] << rule.s[2] << std::endl; 
-
 	while( true )
 	{
+		if( this->imgdir != "null" )
+			life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
 		break;
 	}
 
-	life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
 } // start
 
 bool Game_manager::input_validation_cmd( int argc, char *argv[] )

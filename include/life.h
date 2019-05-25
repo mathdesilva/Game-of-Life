@@ -18,6 +18,7 @@ private:
 	size_t nLin; //!< line number of the matrix.
 	size_t nCol; //!< column number of the matrix.
 	char aliveChar; //!< alive cells char representation.
+	int imageCount = 1; //!< count the number of images. 
 
 public:
 	/// Constructor
