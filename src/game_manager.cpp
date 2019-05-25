@@ -3,11 +3,13 @@
 Game_manager::Game_manager( int argc, char *argv[] )
 {
 	// Reading command line values
-	input_validation_cmd( argc, argv );
-	
+	bool ok = input_validation_cmd( argc, argv );
+	if( not ok )
+		throw std::runtime_error("Help was called");
+
 	// Creating a life
 	life = new Life( inpu_cfg_file );
-
+	
 } // Game_manager
 
 Game_manager::~Game_manager( )
@@ -37,6 +39,7 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 		// help option
 		if( input == "--help" or input == "-h" )
 		{
+			print_help();
 			return false;
 		}
 
