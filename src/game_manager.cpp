@@ -9,7 +9,6 @@ Game_manager::Game_manager( int argc, char *argv[] )
 
 	// Creating a life
 	life = new Life( inpu_cfg_file );
-	
 } // Game_manager
 
 Game_manager::~Game_manager( )
@@ -20,14 +19,32 @@ Game_manager::~Game_manager( )
 void Game_manager::start( )
 {
 	std::cout << "starting\n";
+	
+
+	// checking if have outfile directory to log
+	std::ofstream logOut;
+	if( this->outfile != "null" )
+	{
+		logOut.open(this->outfile);
+		if( not logOut.is_open() )
+			throw std::invalid_argument("Error to open out file");
+	}
 
 	while( true )
 	{
+		// image output
 		if( this->imgdir != "null" )
 			life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
+
+		// text output
+		if( this->outfile != "null" )
+			logOut << *life << std::endl;
+		else
+			std::cout << *life << std::endl;
+
 		break;
 	}
-
+	
 } // start
 
 bool Game_manager::input_validation_cmd( int argc, char *argv[] )

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include <fstream>
 
 #include "prints.h"
 #include "life.h"
