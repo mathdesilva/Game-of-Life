@@ -21,7 +21,7 @@ private:
 	size_t nCol; //!< column number of the matrix.
 	char aliveChar; //!< alive cells char representation.
 	int imageCount = 1; //!< count the number of images.
-	std::vector< bool** > v; //!< Stores all generations matrix.
+	std::vector< bool** > allmtx; //!< Stores all generations matrix.
 
 public:
 	/// Constructor

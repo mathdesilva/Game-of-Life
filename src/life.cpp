@@ -13,6 +13,14 @@ Life::~Life( )
 	for(int i = 0; i < (int)this-> nLin; i++)
 		delete [] this->mtx[i];
 	delete [] this->mtx;
+
+	// deleting all matrix saved in vector
+	for(int j = 0; j < (int)this->allmtx.size(); j++)
+	{
+		for(int i = 0; i < (int)this-> nLin; i++)
+			delete [] this->allmtx[j][i];
+		delete [] this->allmtx[j];
+	}
 } // ~Life
 
 void Life::dataFile_validation( std::string file )
@@ -107,7 +115,7 @@ void Life::print_image( std::string imgdir, const life::Color& bkgcolor, const l
 
 void Life::next_generation( const Rule& rule )
 {
-	this->v.push_back(mtx); // stores the current generation.
+	this->allmtx.push_back(mtx); // stores the current generation.
 
 	// temp matrix allocation
 	bool ** temp = new bool* [this->nLin];
@@ -124,11 +132,36 @@ void Life::next_generation( const Rule& rule )
 			neighbors = neighborsNumber( i, j );
 
 			// new generation
-			std::cout << neighbors;
-		}
-		std::cout << std::endl;
-	}
+			if( mtx[i][j] == false ) // if is dead
+			{
+				int ii = 0;
+				while( rule.b[ii] != -1 )
+				{
+					if( rule.b[ii] == neighbors )
+					{
+						temp[i][j] = true;
+						break;
+					}
+					ii++;
+				}
+			}
+			else // if is alive
+			{
+				int ii = 0;
+				while( rule.s[ii] != -1 )
+				{
+					if( rule.s[ii] == neighbors )
+					{
+						temp[i][j] = true;
+						break;
+					}
+					ii++;
+				}
+			}
+		} // for to j
+	} // for to i
 
+	mtx = temp;
 } // next_generation
 
 int Life::neighborsNumber( int i, int j )

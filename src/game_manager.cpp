@@ -30,6 +30,7 @@ void Game_manager::start( )
 			throw std::invalid_argument("Error to open out file");
 	}
 
+	int genCount = 1;
 	while( true )
 	{
 		// image output
@@ -44,10 +45,11 @@ void Game_manager::start( )
 
 		// next_generation
 		life->next_generation( rule );
+
 		// checks maxgen / stable / extinct
 
-
-		break; // only for tests
+		if( maxgen != -1 and genCount++ == maxgen )
+			break;
 	}
 } // start
 
