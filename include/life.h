@@ -51,6 +51,9 @@ public:
 	/// generates the next generation
 	void next_generation( const Rule& rule );
 
+	/// checks if the generation is extinct
+	bool extinct( );
+
 private:
 	/// checks and save input file values
 	void dataFile_validation( std::string file );

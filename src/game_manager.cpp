@@ -43,13 +43,14 @@ void Game_manager::start( )
 		else
 			std::cout << *life << std::endl;
 
-		// next_generation
-		life->next_generation( rule );
-
 		// checks maxgen / stable / extinct
-
 		if( maxgen != -1 and genCount++ == maxgen )
 			break;
+		if( life->extinct() )
+			break;
+		
+		// next_generation
+		life->next_generation( rule );
 	}
 } // start
 

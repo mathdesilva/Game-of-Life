@@ -188,3 +188,14 @@ int Life::neighborsNumber( int i, int j )
 
 	return neighbors;
 } // neighborsNumber
+
+bool Life::extinct( )
+{
+	for( int i = 0 ; i < (int)this->nLin ; i++ )
+		for( int j = 0 ; j < (int)this->nCol ; j++ )
+			if( mtx[i][j] == true )
+				return false;
+			
+	return true;
+} // extinct
+
