@@ -42,9 +42,13 @@ void Game_manager::start( )
 		else
 			std::cout << *life << std::endl;
 
-		break;
+		// next_generation
+		life->next_generation( rule );
+		// checks maxgen / stable / extinct
+
+
+		break; // only for tests
 	}
-	
 } // start
 
 bool Game_manager::input_validation_cmd( int argc, char *argv[] )

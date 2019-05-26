@@ -5,9 +5,6 @@ Life::Life( std::string file )
 	// read input data file
 	// save variables
 	dataFile_validation( file );
-
-	// alocate matrix
-	// put values in matrix
 } // Life
 
 Life::~Life( )
@@ -107,3 +104,54 @@ void Life::print_image( std::string imgdir, const life::Color& bkgcolor, const l
 
   	imageCount++;
 } // print_image
+
+void Life::next_generation( const Rule& rule )
+{
+	this->v.push_back(mtx); // stores the current generation.
+
+	// temp matrix allocation
+	bool ** temp = new bool* [this->nLin];
+	for( int i = 0 ; i < (int)this->nLin ; i++ )
+		temp[i] = new bool[this->nCol]{false};
+
+	// generating new generation
+	int neighbors;
+	for( int i = 0 ; i < (int)this->nLin ; i++ )
+	{
+		for( int j = 0 ; j < (int)this->nCol ; j++ )
+		{
+			// counting neighbors
+			neighbors = neighborsNumber( i, j );
+
+			// new generation
+			std::cout << neighbors;
+		}
+		std::cout << std::endl;
+	}
+
+} // next_generation
+
+int Life::neighborsNumber( int i, int j )
+{
+	int ibeg, iend, jbeg, jend;
+	int neighbors;
+	ibeg = i - 1;
+	iend = i + 1;
+	jbeg = j - 1;
+	jend = j + 1;
+	if(i == 0){ ibeg = 0; iend = 1; }
+	if(i == (int)nLin-1){ ibeg = nLin-2; iend = nLin-1; }
+	if(j == 0){ jbeg = 0; jend = 1; }
+	if(j == (int)nCol-1){ jbeg = nCol-2; jend = nCol-1; }
+	neighbors = 0;
+	for( int ii = ibeg ; ii <= iend ; ii++ )
+		for( int jj = jbeg ; jj <= jend ; jj++ )
+		{
+			if(ii == i and jj == j)
+				continue;
+			if(mtx[ii][jj] == true)
+				neighbors++;
+		}
+
+	return neighbors;
+} // neighborsNumber

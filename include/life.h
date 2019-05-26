@@ -4,12 +4,14 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <vector>
 
 #include "input_validation.h"
 #include "prints.h"
 #include "lodepng.h"
 #include "canvas.h"
 #include "common.h"
+#include "rule.h"
 
 class Life
 {
@@ -18,7 +20,8 @@ private:
 	size_t nLin; //!< line number of the matrix.
 	size_t nCol; //!< column number of the matrix.
 	char aliveChar; //!< alive cells char representation.
-	int imageCount = 1; //!< count the number of images. 
+	int imageCount = 1; //!< count the number of images.
+	std::vector< bool** > v; //!< Stores all generations matrix.
 
 public:
 	/// Constructor
@@ -45,9 +48,15 @@ public:
 	char charAlive( )
 	{ return aliveChar; }
 
+	/// generates the next generation
+	void next_generation( const Rule& rule );
+
 private:
 	/// checks and save input file values
 	void dataFile_validation( std::string file );
+
+	/// count number of neighbors
+	int neighborsNumber( int i, int j );
 
 }; // class Life
 
