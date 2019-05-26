@@ -48,7 +48,9 @@ void Game_manager::start( )
 			break;
 		if( life->extinct() )
 			break;
-		
+		if( life->stable() )
+			break;
+
 		// next_generation
 		life->next_generation( rule );
 	}

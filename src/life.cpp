@@ -195,7 +195,11 @@ bool Life::extinct( )
 		for( int j = 0 ; j < (int)this->nCol ; j++ )
 			if( mtx[i][j] == true )
 				return false;
-			
+
 	return true;
 } // extinct
 
+bool Life::stable( )
+{
+	return false;
+} // stable

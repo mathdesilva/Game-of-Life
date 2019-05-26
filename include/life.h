@@ -54,6 +54,9 @@ public:
 	/// checks if the generation is extinct
 	bool extinct( );
 
+	/// checks if the generation is stable
+	bool stable( );
+
 private:
 	/// checks and save input file values
 	void dataFile_validation( std::string file );
