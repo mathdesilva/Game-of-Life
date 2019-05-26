@@ -9,6 +9,7 @@ Game_manager::Game_manager( int argc, char *argv[] )
 
 	// Creating a life
 	life = new Life( inpu_cfg_file );
+	
 } // Game_manager
 
 Game_manager::~Game_manager( )
@@ -18,7 +19,7 @@ Game_manager::~Game_manager( )
 
 void Game_manager::start( )
 {
-	std::cout << "starting\n";
+	std::cout << ">>> Starting!\n";
 	
 
 	// checking if have outfile directory to log

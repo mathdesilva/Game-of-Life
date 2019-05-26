@@ -32,6 +32,16 @@ public:
 	/// Destructor
 	~Game_manager( );
 
+	/*
+	/// Returns maxgen
+	int max_gen()
+	{return this->maxgen;}
+	
+	/// Returns input file name
+	std::string file_name()
+	{return this->inpu_cfg_file;}
+	*/
+
 	/// Start the game
 	void start( );
 
