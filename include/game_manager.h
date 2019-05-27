@@ -5,6 +5,8 @@
 #include <string>
 #include <stdexcept>
 #include <fstream>
+#include <chrono>
+#include <thread>
 
 #include "prints.h"
 #include "life.h"
@@ -16,7 +18,7 @@ class Game_manager
 private:
 	std::string imgdir="null"; //!< Image directory.
 	int maxgen=-1; //!< Max generetion value.
-	int fps=2; //!< FPS of output.
+	int fps=1000000000 / 2; //!< FPS of output.
 	int blocksize=10; //!< size of "big pixel" block.
 	life::Color bkgcolor = Color{0,250,0}; //!< green.
 	life::Color alivecolor = Color{70,130,180}; //!< blue.
@@ -31,16 +33,6 @@ public:
 
 	/// Destructor
 	~Game_manager( );
-
-	/*
-	/// Returns maxgen
-	int max_gen()
-	{return this->maxgen;}
-	
-	/// Returns input file name
-	std::string file_name()
-	{return this->inpu_cfg_file;}
-	*/
 
 	/// Start the game
 	void start( );

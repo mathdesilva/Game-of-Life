@@ -38,6 +38,9 @@ void Game_manager::start( )
 		if( this->imgdir != "null" )
 			life->print_image( imgdir, bkgcolor, alivecolor, blocksize );
 
+		// waiting some time( --fps flag )
+		std::this_thread::sleep_for( std::chrono::nanoseconds( this->fps ) );
+
 		// text output
 		if( this->outfile != "null" )
 			logOut << *life << std::endl;
@@ -106,7 +109,7 @@ bool Game_manager::input_validation_cmd( int argc, char *argv[] )
 				return false;
 			}
 
-			this->fps = stoi(value);
+			this->fps = 1000000000 / stoi(value);
 		}
 
 		// blocksize value argument
