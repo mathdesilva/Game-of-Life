@@ -4,7 +4,9 @@ Life::Life( std::string file )
 {
 	// read input data file
 	// save variables
+	print_message("Reading input file...");
 	dataFile_validation( file );
+	print_message("Input file was read successfully!");
 } // Life
 
 Life::~Life( )

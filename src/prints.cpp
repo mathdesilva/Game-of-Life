@@ -1,26 +1,22 @@
 #include "prints.h"
 
-/*
-void pre_print_intro( Game_manager& gm )
-{
-	std::cout << ">>> Trying to open input file "<< gm.file_name() <<"..."
-}
 
-void print_intro( Life& lf, Game_manager& gm )
+void print_welcome( void )
 {
-	std::cout << "done!\n"
-			  << ">>> Running simulation up to "<< gm.max_gen() <<" generations, or until extinction/stability is reached, whichever comes first.\n"
-			  << ">>> Processing data, please wait...\n"
-
-	std::cout << "****************************************************************\n"
+	std::cout << std::endl << std::endl
+			  << "****************************************************************\n"
 			  << "  Welcome to Conway’s game of Life.\n"
-			  << "  Running a simulation on a grid of size "<< lf.lines() <<" by "<< lf.columns() <<" in which\n"
 			  << "  each cell can either be occupied by an organism or not.\n"
 			  << "  The occupied cells change from generation to generation\n"
 			  << "  according to the number of neighboring cells which are alive.\n"
-			  << "****************************************************************\n";
-}
-*/
+			  << "****************************************************************\n"
+			  << std::endl << std::endl;
+} // print_welcome
+
+void print_message( std::string str )
+{
+	std::cout << str << std::endl;
+} // print_message
 
 void print_help( void )
 {

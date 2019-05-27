@@ -3,10 +3,11 @@
 Game_manager::Game_manager( int argc, char *argv[] )
 {
 	// Reading command line values
+	print_message("Reading command line values...");
 	bool ok = input_validation_cmd( argc, argv );
 	if( not ok )
 		throw std::runtime_error("Help was called");
-
+	print_message("Command line values was read successfully!");
 	// Creating a life
 	life = new Life( inpu_cfg_file );
 	
@@ -19,8 +20,7 @@ Game_manager::~Game_manager( )
 
 void Game_manager::start( )
 {
-	std::cout << ">>> Starting!\n";
-	
+	print_welcome();	
 
 	// checking if have outfile directory to log
 	std::ofstream logOut;
