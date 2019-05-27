@@ -67,6 +67,7 @@ void Life::dataFile_validation( std::string file )
 
 std::ostream& operator<<(std::ostream& os, const Life& lf)
 {
+	os << "Generation " << lf.streamCount << ":\n";
 	for(int i=0; i<(int)lf.nLin; i++)
 	{
 		os << '[';

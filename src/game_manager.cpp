@@ -46,6 +46,7 @@ void Game_manager::start( )
 			logOut << *life << std::endl;
 		else
 			std::cout << *life << std::endl;
+		life->streamCountpp();
 
 		// checks maxgen / stable / extinct
 		if( maxgen != -1 and genCount++ == maxgen )

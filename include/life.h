@@ -21,6 +21,7 @@ private:
 	size_t nCol; //!< column number of the matrix.
 	char aliveChar; //!< alive cells char representation.
 	int imageCount = 1; //!< count the number of images.
+	int streamCount = 1; //!< count the number of output generations.
 	std::vector< bool** > allmtx; //!< Stores all generations matrix.
 
 public:
@@ -47,6 +48,10 @@ public:
 	/// get char that representates alive cells
 	char charAlive( )
 	{ return aliveChar; }
+
+	/// sum one to this->streamCount
+	void streamCountpp( void )
+	{ this->streamCount++; }
 
 	/// generates the next generation
 	void next_generation( const Rule& rule );
