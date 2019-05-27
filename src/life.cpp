@@ -201,5 +201,15 @@ bool Life::extinct( )
 
 bool Life::stable( )
 {
+	for( int k = 0 ; k < (int)allmtx.size() ; k++ )
+	{
+		for( int i = 0 ; i < (int)this->nLin ; i++ )
+			for( int j = 0 ; j < (int)this->nCol ; j++ )
+				if( mtx[i][j] != allmtx[k][i][j] )
+					goto nextMatrix;
+
+		return true;
+	nextMatrix:;
+	}
 	return false;
 } // stable
