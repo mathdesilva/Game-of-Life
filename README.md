@@ -12,7 +12,7 @@ Run the project using `./life [<options>] <input_file_dir>`:
 * **--bkgcolor <color>**: Color name for the background.
 * **--alivecolor <color>**: Color name for representing alive cells.
 * **--outfile <filename>**: Write the text representation of the simulation to the given filename.
-* **--rule <code>**: Specify evolution rule using `B-/S-` code, B for born and S for survives. Default is B3/S23.
+* **--rule <code>**: Specify evolution rule using B-/S- code, B for born and S for survives. Default is B3/S23.
 
 ## Dependencies:
 * `g++`
