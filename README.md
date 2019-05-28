@@ -5,14 +5,14 @@ An Programming Language project to make a Conway's Game of Life using C++. The m
 ## How to use:
 Run the project using `./life [<options>] <input_file_dir>`:
 * **--help or -h**: Prints a help text.
-* **--imgdir <\path>**: Specify directory where output images are written to.
-* **--maxgen <\num>**: Maximum number of generations to simulate.
-* **--fps <\num>**: Number of generations presented per second.
-* **--blocksize <\num>**: Pixel size of a cell.
-* **--bkgcolor <\color>**: Color name for the background.
-* **--alivecolor <\color>**: Color name for representing alive cells.
-* **--outfile <\filename>**: Write the text representation of the simulation to the given filename.
-* **--rule <\code>**: Specify evolution rule using B-/S- code, B for born and S for survives. Default is B3/S23.
+* **--imgdir < path >**: Specify directory where output images are written to.
+* **--maxgen < num >**: Maximum number of generations to simulate.
+* **--fps < num >**: Number of generations presented per second.
+* **--blocksize < num >**: Pixel size of a cell.
+* **--bkgcolor < color >**: Color name for the background.
+* **--alivecolor < color >**: Color name for representing alive cells.
+* **--outfile < filename >**: Write the text representation of the simulation to the given filename.
+* **--rule < code >**: Specify evolution rule using B-/S- code, B for born and S for survives. Default is B3/S23.
 
 ## Dependencies:
 * `g++`
