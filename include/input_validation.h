@@ -1,3 +1,10 @@
+/*
+INPUT_VALIDATION.H
+
+This file contains all functions to help input validations
+*/
+
+
 #ifndef INPUT_VALIDATION_H
 #define INPUT_VALIDATION_H
 

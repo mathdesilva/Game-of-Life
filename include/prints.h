@@ -1,3 +1,11 @@
+/*
+PRINTS.H
+
+This file constains all functions that show informations in
+terminal 
+*/
+
+
 #ifndef PRINTS_H
 #define PRINTS_H
 

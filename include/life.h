@@ -1,3 +1,10 @@
+/*
+LIFE.H
+
+This file constains only the Life class
+*/
+
+
 #ifndef LIFE_H
 #define LIFE_H
 
@@ -13,6 +20,11 @@
 #include "common.h"
 #include "rule.h"
 
+/*! \class Life
+    \brief Controls all generations
+
+    Contains all tools to generate new generations and get some informations about it.
+*/
 class Life
 {
 private:

@@ -1,3 +1,11 @@
+/*
+GAME_MANAGER.H
+
+This file contains only the Game_manager class that reads
+all input values and starts the game.
+*/
+
+
 #ifndef GAME_MANAGER_H
 #define GAME_MANAGER_H
 
@@ -13,6 +21,11 @@
 #include "input_validation.h"
 #include "rule.h"
 
+/*! \class Game_manager
+    \brief controls the game
+	
+    This class reads all input values and starts the game.
+*/
 class Game_manager
 {
 private:
