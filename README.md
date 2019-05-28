@@ -1,6 +1,6 @@
 # Conway's Game of Life
 
-An Programming Language project to make a Conway's Game of Life using C++. The main goal with this project is to learn more about classes, dynamic allocation and others C++ features.
+A Programming Language project to make a Conway's Game of Life using C++. The main goal with this project is to learn more about classes, dynamic allocation and others C++ features.
 
 ## How to use:
 Run the project using `./life [<options>] <input_file_dir>`:
